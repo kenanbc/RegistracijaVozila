@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Registracija vozila BiH</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="col">
+                <div class="card my-4 rounded-3 shadow-sm vh-90">
+                  <div class="card-header py-3 text-center d-flex justify-content-between align-items-center">
+                    <button class="btn" onclick="location.href='index.html'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                        </svg>
+                    </button>
+                    <h4 class="my-0 mx-auto">Pregled vozila</h4>
+                  </div>
+                
+                    <div class="card-body"> 
+
+                      <div class="input-group rounded mb-4 col-6" style="width: auto;">
+                        <input type="search" class="form-control rounded" placeholder="Pretraga po registarskoj oznaci" />
+                        <span class="input-group-text border-0" id="search-addon">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                          </svg>
+                        </span>
+                      </div>
+
+                        <table class="table table-striped text-center">
+                            <thead class="table-dark">
+                              <tr>
+                                <th scope="col">Proširi</th>
+                                <th scope="col">Registarska oznaka</th>
+                                <th scope="col">Marka</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">Tip</th>
+                                <th scope="col">Godina proizvodnje</th>
+                                <th scope="col">Broj šasije</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">
+                                  <button class="btn" type="button" id="prosiri" data-toggle="modal" data-target="#exampleModal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                                    </svg>
+                                  </button>
+                                </th>
+                                <th scope="row">A21-J-930</th>
+                                <td>BMW</td>
+                                <td>F30</td>
+                                <td>Limuzina</td>
+                                <td>2014</td>
+                                <td>WVWZZZ3BZWE689725</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+                          <div class="modal fade modal-vertical-centered" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                              <div class="modal-content">
+                                <div class="modal-header text-center d-block">
+                                  <h5 class="modal-title" id="exampleModalLabel">Pregled informacija</h5>
+                                </div>
+                                <div class="modal-body">
+                                  <table class="table table-striped text-center">
+                                    <thead class="table-dark">
+                                      <tr>
+                                        <th scope="col">Registarska oznaka</th>
+                                        <th scope="col">Marka</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Tip</th>
+                                        <th scope="col">Godina proizvodnje</th>
+                                        <th scope="col">Broj šasije</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">A21-J-930</th>
+                                        <td>BMW</td>
+                                        <td>F30</td>
+                                        <td>Limuzina</td>
+                                        <td>2014</td>
+                                        <td>WVWZZZ3BZWE689725</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary">Napravi izmjenu</button>
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
