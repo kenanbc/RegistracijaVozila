@@ -172,7 +172,7 @@ if(isset($_SESSION['voziloID'])){
                             </tbody>
                           </table>
                           
-                          <table class="table table-striped text-center mb-5">
+                          <table class="table table-striped text-center mb-1">
                                     <thead class="table-dark">
                                       <tr>
                                         <th scope="col">Registarska oznaka</th>
@@ -211,6 +211,51 @@ if(isset($_SESSION['voziloID'])){
                                                 <td>'.$row["GodinaProizvodnje"].'</td>    
                                                 <td>'.$row["karoserija"].'</td>
                                                 <td>'.$row["BrojSasije"].'</td> </tr>';
+                                        }
+                                      } else {
+                                        echo "0 results";
+                                      }
+
+                                    $conn->close();
+                                ?>
+                            </tbody>
+                                  </table>
+                                  <table class="table table-striped text-center mb-5">
+                                    <thead class="table-dark">
+                                      <tr>
+                                        <th scope="col">Tip motora</th>
+                                        <th scope="col">Snaga motora</th>
+                                        <th scope="col">Kubikaza</th>
+                                        <th scope="col">Broj motora</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                <?php 
+
+                                    $servername = "localhost:3306";
+                                    $usernamedb = "root";
+                                    $passwordb = "1234";
+                                    $dbname = "registracija_vozila";
+                                    
+                                    $conn = new mysqli($servername, $usernamedb, $passwordb, $dbname);
+                                    if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                    }
+
+                                    $sql = "SELECT tipMotora, snagaMotora, kubikaza, brojMotora
+                                            FROM vozilo
+                                            WHERE VoziloID = $modalniID";
+                                    $result = $conn->query($sql);
+                                                                    
+                                    if ($result->num_rows > 0) {
+                                        while($row = $result->fetch_assoc()) {
+                                          echo '
+                                                <tr>
+                                                <th scope="row">'.$row["tipMotora"].'</th>
+                                                <td>'.$row["snagaMotora"].'kW</td>
+                                                <td>'.$row["kubikaza"].'</td>
+                                                <td>'.$row["brojMotora"].'</td> 
+                                                </tr>';
                                         }
                                       } else {
                                         echo "0 results";

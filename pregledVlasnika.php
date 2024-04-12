@@ -305,12 +305,9 @@ if(isset($_SESSION['vlasnikID'])){
         var noResultsMessage = document.getElementById('noResultsMessage');
 
         if (tableRows.length === 0) {
-            // Skrivamo tabelu
             document.querySelector('.table').style.display = 'none';
-            // Prikažemo poruku "Nema rezultata"
             noResultsMessage.style.display = 'block';
         } else {
-            // Sakrijemo poruku "Nema rezultata"
             noResultsMessage.style.display = 'none';
         }
     });

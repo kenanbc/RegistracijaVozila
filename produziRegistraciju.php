@@ -1,52 +1,3 @@
-<?php
-
-    // $marka = $_POST["marka"]; 
-    // $model = $_POST["model"]; 
-    // $godinaProizvodnje = $_POST["godinaProizvodnje"];
-    // $brojMotora = $_POST["brojMotora"];
-    // $boja = $_POST["boja"];
-    // $snaga = $_POST["snagaMotora"];
-    // $brojSasije = $_POST["brojSasije"];
-    // $kubikaza = $_POST["kubikaza"];
-    // $tipMotora = $_POST["tipMotora"];
-    // $karoserija = $_POST["karoserija"];
-    // $vrsta = $_POST["vrsta"];
-
-    // $ime = $_POST["ime"];
-    // $prezime = $_POST["prezime"];
-    // $jmbg = $_POST["jmbg"];
-    // $adresa = $_POST["adresa"];
-    // $grad = $_POST["grad"];
-    // $kanton = $_POST["kanton"];
-    // $telefon = $_POST["telefon"];
-
-    // session_start();
-
-    // $_SESSION['marka'] = $marka;
-    // $_SESSION['model'] = $model;
-    // $_SESSION['godinaProizvodnje'] = $godinaProizvodnje;
-    // $_SESSION['brojMotora'] = $brojMotora;
-    // $_SESSION['boja'] = $boja;
-    // $_SESSION['snaga'] = $snaga;
-    // $_SESSION['brojSasije'] = $brojSasije;
-    // $_SESSION['kubikaza'] = $kubikaza;
-    // $_SESSION['tipMotora'] = $tipMotora;
-    // $_SESSION['karoserija'] = $karoserija;
-    // $_SESSION['vrsta'] = $vrsta;
-
-    // $_SESSION['ime'] = $ime;
-    // $_SESSION['prezime'] = $prezime;
-    // $_SESSION['jmbg'] = $jmbg;
-    // $_SESSION['adresa'] = $adresa;
-    // $_SESSION['grad'] = $grad;
-    // $_SESSION['kanton'] = $kanton;
-    // $_SESSION['telefon'] = $telefon;
-
-
-?>
-
-
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -70,11 +21,19 @@
                         <div class="row">
                             <div class="col-md-7 col-lg-12">
                               <h4 class="mb-3 fw-normal">Podaci o registraciji vozila</h4>
-                              <form action="./registruj.php" method="post">
+                              <form action="./produziRegistracijuAction.php" method="post">
                               <div class="row g-3">
+                              <div class="col-sm-6">
+                                    <label for="brojSasije" class="form-label">Broj šasije</label>
+                                    <input type="text" class="form-control" id="brojSasije" name="brojSasije" placeholder="" maxlength="17">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="brojRegistracije" class="form-label">Broj registracije</label>
+                                    <input type="text" class="form-control" id="brojRegistracije" name="brojRegistracije" placeholder="" maxlength="9">
+                                </div>
                                     <div class="col-sm-6">
-                                        <label for="datumRegistracije" class="form-label">Broj šasije</label>
-                                        <input type="text" class="form-control" id="datumRegistracije" name="brojSasije" placeholder="">
+                                        <label for="datumRegistracije" class="form-label">Datum registracije</label>
+                                        <input type="text" class="form-control" id="datumRegistracije" name="datumRegistracije" placeholder="" value="<?php echo date('d.m.Y'); ?>">
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="istekRegistracije" class="form-label">Datum isteka registracije</label>
@@ -82,21 +41,10 @@
                                     </div>
                                 </div>
 
-                                <div class="row g-3 mt-3">
-                                    <div class="col-12 d-flex justify-content-center align-items-center">
-                                    <div class="tablica">
-                                        <?php
-                                            include 'generisanjeTablice.php';
-                                            $tablica = generisiTablicu();
-                                            echo $tablica;
-                                        ?>
-                                        <input type="hidden" name="tablica" value="<?php echo htmlspecialchars($tablica); ?>">
-                                    </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <button class="btn btn-primary btn-lg" style="width: 80%; margin-top: 3%;" type="submit">Registruj vozilo</button>
+                                        <button class="btn btn-primary btn-lg" style="width: 80%; margin-top: 3%;" type="submit">Produži registraciju vozila</button>
                                     </div>
                                 </div>
                             </form>
@@ -107,4 +55,15 @@
                 </div>
             </div>
     </body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('brojSasije').addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+
+        document.getElementById('brojRegistracije').addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+    });
+</script>
 </html>

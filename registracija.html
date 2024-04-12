@@ -72,7 +72,7 @@
                                   <div class="col-12">
                                     <label for="brojSasije" class="form-label">Broj šasije</label>
                                     <div class="input-group has-validation">
-                                      <input type="text" class="form-control" id="brojSasije" name="brojSasije" required="">
+                                      <input type="text" class="form-control" id="brojSasije" name="brojSasije" required="" maxlength="17">
                                     </div>
                                   </div>
 
@@ -96,19 +96,19 @@
 
                                   <div class="col-sm-6">
                                     <label for="tip" class="form-label">Broj motora</label>
-                                    <input type="text" class="form-control" id="brojMotora" name="brojMotora" value="" required="">
+                                    <input type="text" class="form-control" id="brojMotora" name="brojMotora" value="" required="" maxlength="10">
                                   </div>
 
 
                                   <div class="col-sm-6">
                                     <label for="kubikaza" class="form-label">Radna zapremina motora u ccm</label>
-                                    <input type="text" class="form-control" id="kubikaza"  name="kubikaza" value="" required="">
+                                    <input type="number" class="form-control" id="kubikaza" name="kubikaza" value="" required maxlength="4">
                                   </div>
 
 
                                   <div class="col-sm-6">
                                     <label for="snagaMotora" class="form-label">Snaga motora u kW</label>
-                                    <input type="text" class="form-control" id="snagaMotora"  name="snagaMotora" value="" required="">
+                                    <input type="number" class="form-control" id="snagaMotora"  name="snagaMotora" value="" required="">
                                   </div>
                                                       
                                   <div class="col-md-6">
@@ -124,7 +124,7 @@
 
                                   <div class="col-sm-6">
                                     <label for="godinaProizvodnje" class="form-label">Godina proizvodnje</label>
-                                    <input type="text" class="form-control" id="godinaProizvodnje" name="godinaProizvodnje" value="" required="">
+                                    <input type="number" class="form-control" id="godinaProizvodnje" name="godinaProizvodnje" value="" required="" maxlength="4">
                                   </div>
 
                                   <div class="col-sm-6">
@@ -148,7 +148,7 @@
                                   <div class="col-12">
                                     <label for="jmbg" class="form-label">Jedinstveni matični broj građanina (JMBG)</label>
                                     <div class="input-group has-validation">
-                                      <input type="text" class="form-control" id="jmbg" name="jmbg" required="">
+                                      <input type="number" class="form-control" id="jmbg" name="jmbg" required="" maxlength="13">
                                     </div>
                                   </div>
                                   
@@ -181,7 +181,7 @@
 
                                   <div class="col-sm-6">
                                     <label for="telefon" class="form-label">Telefon</label>
-                                    <input type="text" class="form-control" id="telefon" name="telefon" value="" required="">
+                                    <input type="number" class="form-control" id="telefon" name="telefon" value="" required="" pattern="[0-9]+">
                                   </div>
                                   
                                     <center>

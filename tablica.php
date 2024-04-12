@@ -1,16 +1,31 @@
 <?php
 
+    if(!isset($_POST["tipMotora"])) {
+        $brojMotora = null;
+        $snaga = null;
+        $kubikaza = null;
+        $tipMotora = null;
+    }else{
+        $brojMotora = $_POST["brojMotora"];
+        $tipMotora = $_POST["tipMotora"];
+        $kubikaza = $_POST["kubikaza"];
+        $snaga = $_POST["snagaMotora"];
+    }
     $marka = $_POST["marka"]; 
     $model = $_POST["model"]; 
     $godinaProizvodnje = $_POST["godinaProizvodnje"];
-    $brojMotora = $_POST["brojMotora"];
     $boja = $_POST["boja"];
-    $snaga = $_POST["snagaMotora"];
     $brojSasije = $_POST["brojSasije"];
-    $kubikaza = $_POST["kubikaza"];
-    $tipMotora = $_POST["tipMotora"];
     $karoserija = $_POST["karoserija"];
     $vrsta = $_POST["vrsta"];
+
+
+    if(!isset($_POST["tipMotora"])) {
+        $brojMotora = null;
+        $snaga = null;
+        $kubikaza = null;
+        $tipMotora = null;
+      }
 
     $ime = $_POST["ime"];
     $prezime = $_POST["prezime"];

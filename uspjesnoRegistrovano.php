@@ -1,7 +1,34 @@
 <?php
     session_start();
-    $voziloID = $_SESSION['voziloID'];
-    $vlasnikID = $_SESSION['vlasnikID'];
+    if(!isset($_SESSION['voziloID'])){
+      $servername = "localhost:3306";
+      $usernamedb = "root";
+      $passwordb = "1234";
+      $dbname = "registracija_vozila";
+
+      $conn = new mysqli($servername, $usernamedb, $passwordb, $dbname);
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+
+      $brojRegistracije = $_SESSION['brojRegistracije'];
+
+      $sql = "SELECT vlasnikID, voziloID 
+              FROM registracija 
+              WHERE registracijskaOznaka = '$brojRegistracije'";
+
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $vlasnikID = $row['vlasnikID'];
+          $voziloID = $row['voziloID'];
+        }
+      }
+    }
+    else {
+      $voziloID = $_SESSION['voziloID'];
+      $vlasnikID = $_SESSION['vlasnikID'];
+    }
 ?>
 
 <html>

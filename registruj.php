@@ -23,6 +23,13 @@ $tipMotora = $_SESSION['tipMotora'];
 $karoserija = $_SESSION['karoserija'];
 $vrsta = $_SESSION['vrsta'];
 
+if(!isset($_SESSION['brojMotora'])) {
+    $brojMotora = null;
+    $snaga = null;
+    $kubikaza = null;
+    $tipMotora = null;
+  }
+
 $ime = $_SESSION['ime'];
 $prezime = $_SESSION['prezime'];
 $jmbg = $_SESSION['jmbg'];
