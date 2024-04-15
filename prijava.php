@@ -1,3 +1,9 @@
+<?php
+    if (isset($_COOKIE["user"])) {
+        setcookie("user", "", time() - 3600, "/");
+    }
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -19,11 +25,11 @@
                         </div>
                             <hr class="my-4">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="username" name="username">
+                                <input type="text" class="form-control" id="username" name="username" required>
                                 <label for="floatingInput">Korisničko ime</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" required>
                                 <label for="floatingPassword">Lozinka</label>
                             </div>
                             <button class="w-100 btn btn-lg btn-primary" type="submit">Prijava</button>
@@ -48,6 +54,13 @@
                                     $result = $conn->query($sql);
                                     
                                     if ($result->num_rows > 0) {
+                                        $sqlUredID = "SELECT uredID FROM uposlenik WHERE korisnicko_ime = BINARY '$username'";
+                                        $result = $conn->query($sqlUredID);
+                                        while($row = $result->fetch_assoc()){
+                                            $cookie_value = $row['uredID'];
+                                        }
+                                        $cookie_name = "user";
+                                        setcookie($cookie_name, $cookie_value, time() + (86400), "/");
                                         header("Location: index.html");
                                         exit();
                                     } else {

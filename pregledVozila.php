@@ -37,7 +37,7 @@ if(isset($_SESSION['voziloID'])){
                     <div class="card-body"> 
 
                       <div class="input-group rounded mb-4 col-6" style="width: auto;">
-                      <input type="search" class="form-control rounded" id="searchInput" placeholder="Pretraga po registarskoj oznaci" />
+                      <input type="search" class="form-control rounded" id="searchInput" placeholder="Pretraga po registarskoj oznaci" maxlength="9" />
                         <span class="input-group-text border-0" id="search-addon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="cursor: pointer;">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -252,7 +252,7 @@ if(isset($_SESSION['voziloID'])){
                                           echo '
                                                 <tr>
                                                 <th scope="row">'.$row["tipMotora"].'</th>
-                                                <td>'.$row["snagaMotora"].'kW</td>
+                                                <td>'.$row["snagaMotora"].'</td>
                                                 <td>'.$row["kubikaza"].'</td>
                                                 <td>'.$row["brojMotora"].'</td> 
                                                 </tr>';
@@ -407,7 +407,11 @@ if(isset($_SESSION['voziloID'])){
             ?>
         }
 
-        // window.onbeforeunload.deleteSession();
+        function goBack(){
+          window.location.href = './index.html';
+        }
+
+        window.onbeforeunload.goBack();
         
             </script>
     </body>

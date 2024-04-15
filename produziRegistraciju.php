@@ -25,11 +25,11 @@
                               <div class="row g-3">
                               <div class="col-sm-6">
                                     <label for="brojSasije" class="form-label">Broj šasije</label>
-                                    <input type="text" class="form-control" id="brojSasije" name="brojSasije" placeholder="" maxlength="17">
+                                    <input type="text" class="form-control" id="brojSasije" name="brojSasije" placeholder="" maxlength="17" required="" oninput="checkInputs()">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="brojRegistracije" class="form-label">Broj registracije</label>
-                                    <input type="text" class="form-control" id="brojRegistracije" name="brojRegistracije" placeholder="" maxlength="9">
+                                    <label for="brojRegistracije" class="form-label">Registracijska oznaka</label>
+                                    <input type="text" class="form-control" id="brojRegistracije" name="brojRegistracije" placeholder="" maxlength="9" required oninput="checkInputs()">
                                 </div>
                                     <div class="col-sm-6">
                                         <label for="datumRegistracije" class="form-label">Datum registracije</label>
@@ -44,7 +44,7 @@
                                 
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <button class="btn btn-primary btn-lg" style="width: 80%; margin-top: 3%;" type="submit">Produži registraciju vozila</button>
+                                        <button id="submitButton" class="btn btn-primary btn-lg" style="width: 80%; margin-top: 3%;" type="submit">Produži registraciju vozila</button>
                                     </div>
                                 </div>
                             </form>
@@ -65,5 +65,7 @@
             this.value = this.value.toUpperCase();
         });
     });
+
+    
 </script>
 </html>

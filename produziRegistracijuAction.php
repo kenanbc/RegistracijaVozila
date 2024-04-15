@@ -14,7 +14,7 @@ $brojRegistracije = $_POST["brojRegistracije"];
 $datumRegistracije = $_POST["datumRegistracije"];
 $istekRegistracije = $_POST["istekRegistracije"];
 $statusRegistracije = "Aktivna";
-$uredID = 1;
+$uredID = $_COOKIE["user"];
 
 session_start();
 
@@ -22,7 +22,7 @@ $_SESSION['brojRegistracije'] = $brojRegistracije;
 
 
 $registracija = $conn->prepare("UPDATE registracija
-                                SET datumRegistracije = '$datumRegistracije', datumIstekaRegistracije = '$istekRegistracije' 
+                                SET datumRegistracije = '$datumRegistracije', datumIstekaRegistracije = '$istekRegistracije', uredID = $uredID 
                                 WHERE registracijskaOznaka = '$brojRegistracije'");
 
 $registracija->execute();
@@ -33,6 +33,6 @@ if ($registracija) {
     $conn->close();
 
 if (isset($greska)) {
-    header("Location: greska.php?poruka=" . urlencode($greska));
+    header("Location: greska.php");
     exit();
 }

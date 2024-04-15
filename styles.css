@@ -22,3 +22,8 @@
 .form-search {
     text-transform: uppercase;
 }
+
+.btn-signout{
+    border-radius: 12px;
+    /* color: #0d6efd; */
+}

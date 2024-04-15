@@ -43,7 +43,7 @@ $tablica = $_POST["tablica"];
 $datumRegistracije = $_POST["datumRegistracije"];
 $istekRegistracije = $_POST["istekRegistracije"];
 $statusRegistracije = "Aktivna";
-$uredID = 1;
+$uredID = $_COOKIE["user"];
 
 
 $vozilo = $conn->prepare("INSERT INTO vozilo (brojSasije, marka, model, karoserija, vrsta, boja, godinaProizvodnje, tipMotora, snagaMotora, kubikaza, brojMotora) 
