@@ -1,5 +1,5 @@
 <?php
-
+    if(isset($_COOKIE["user"])){
     if(!isset($_POST["tipMotora"])) {
         $brojMotora = null;
         $snaga = null;
@@ -57,7 +57,7 @@
     $_SESSION['kanton'] = $kanton;
     $_SESSION['telefon'] = $telefon;
 
-
+    }
 ?>
 
 
@@ -70,6 +70,9 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+    <?php
+        if(isset($_COOKIE["user"])){
+        ?>
         <div class="container d-flex justify-content-center align-items-center">
             <div class="col">
                 <div class="card my-4 rounded-3 shadow-sm">
@@ -121,5 +124,10 @@
                     </div>
                 </div>
             </div>
+            <?php } 
+        else echo 
+        '<div class="container vh-100 d-flex justify-content-center align-items-center">
+            <h4>Niste prijavljeni! <a href = "prijava.php" style = "text-decoration: none;">Prijavi se</a></h4>
+        </div>';?>
     </body>
 </html>

@@ -1,8 +1,3 @@
-<?php
-    if (isset($_COOKIE["user"])) {
-        setcookie("user", "", time() - 3600, "/");
-    }
-?>
 
 <html>
     <head>
@@ -12,6 +7,9 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <?php
+            if(!isset($_COOKIE["user"])){
+        ?>
         <div class="container-fluid d-flex justify-content-center align-items-center vh-100">
             <div class="container col-xl-10 col-xxl-10 px-4 py-5">
                 <div class="row align-items-center g-lg-5 py-5">
@@ -61,7 +59,7 @@
                                         }
                                         $cookie_name = "user";
                                         setcookie($cookie_name, $cookie_value, time() + (86400), "/");
-                                        header("Location: index.html");
+                                        header("Location: index.php");
                                         exit();
                                     } else {
                                         echo "<p class='d-inline-block' style='color:red; margin-left: 15%;' >Pogrešno korisničko ime ili lozinka!</p>";
@@ -74,5 +72,10 @@
                 </div>
             </div>
         </div>
+        <?php } 
+        else echo 
+        '<div class="container vh-100 d-flex justify-content-center align-items-center">
+            <h4>Već ste prijavljeni na sistem! <a href = "./index.php" style = "text-decoration: none;">Nastavi</a></h4>
+        </div>';?>
     </body>
 </html>

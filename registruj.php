@@ -113,6 +113,6 @@ if ($voziloID) {
     $conn->close();
 
 if (isset($greska)) {
-    header("Location: greska.php?poruka=" . urlencode($greska));
+    header("Location: greska.php");
     exit();
 }
