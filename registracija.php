@@ -76,7 +76,7 @@
                                   <div class="col-12">
                                     <label for="brojSasije" class="form-label">Broj šasije</label>
                                     <div class="input-group has-validation">
-                                      <input type="text" class="form-control" id="brojSasije" name="brojSasije" required="" maxlength="17">
+                                      <input type="text" class="form-control form-search" id="brojSasije" name="brojSasije" required="" maxlength="17">
                                     </div>
                                   </div>
 
@@ -100,7 +100,7 @@
 
                                   <div class="col-sm-6">
                                     <label for="tip" class="form-label">Broj motora</label>
-                                    <input type="text" class="form-control" id="brojMotora" name="brojMotora" value="" required="" maxlength="10">
+                                    <input type="text" class="form-control form-search" id="brojMotora" name="brojMotora" value="" required="" maxlength="10">
                                   </div>
 
 
