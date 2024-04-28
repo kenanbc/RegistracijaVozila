@@ -253,8 +253,8 @@ if(isset($_SESSION['vlasnikID'])){
                                           echo '
                                                 <tr>
                                                 <th scope="row">'.$row["statusRegistracije"].'</th>
-                                                <td>'.$row["datumRegistracije"].'</td>
-                                                <td>'.$row["datumIstekaRegistracije"].'</td>
+                                                <td>'.date("d.m.Y", strtotime($row["datumRegistracije"])).'</td>
+                                                <td>'.date("d.m.Y", strtotime($row["datumIstekaRegistracije"])).'</td>
                                                 </tr>';
                                         }
                                       } else {

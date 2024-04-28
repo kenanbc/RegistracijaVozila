@@ -36,11 +36,13 @@
                                 </div>
                                     <div class="col-sm-6">
                                         <label for="datumRegistracije" class="form-label">Datum registracije</label>
-                                        <input type="text" class="form-control" id="datumRegistracije" name="datumRegistracije" placeholder="" value="<?php echo date('d.m.Y'); ?>">
+                                        <input type="date" class="form-control" id="datumRegistracije" name="datumRegistracije" placeholder="" value="<?php echo date('Y-m-d'); ?>">
+
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="istekRegistracije" class="form-label">Datum isteka registracije</label>
-                                        <input type="text" class="form-control" id="istekRegistracije" name="istekRegistracije" placeholder="" value="<?php echo date('d.m.Y', strtotime('+1 year')); ?>" required>
+                                        <input type="date" class="form-control" id="istekRegistracije" name="istekRegistracije" placeholder="" value="<?php echo date('Y-m-d', strtotime('+1 year')); ?>" required>
+
                                     </div>
                                 </div>
 

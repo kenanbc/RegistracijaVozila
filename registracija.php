@@ -65,12 +65,12 @@
                                 <div class="row g-3">
                                   <div class="col-sm-6">
                                     <label for="marka" class="form-label">Marka</label>
-                                    <input type="text" class="form-control" id="marka" name="marka" value="" required>
+                                    <input type="text" class="form-control" id="marka" name="marka" value="" required maxlength="50">
                                   </div>
                       
                                   <div class="col-sm-6">
                                     <label for="model" class="form-label">Model / Tip</label>
-                                    <input type="text" class="form-control" id="model" name="model" value="" required="">
+                                    <input type="text" class="form-control" id="model" name="model" value="" required="" maxlength="50">
                                   </div>
 
                                   <div class="col-12">
@@ -95,7 +95,7 @@
 
                                   <div class="col-sm-6">
                                     <label for="boja" class="form-label">Karoserija</label>
-                                    <input type="text" class="form-control" id="karoserija" name="karoserija" value="" required="">
+                                    <input type="text" class="form-control" id="karoserija" name="karoserija" value="" required="" maxlength="50">
                                   </div>
 
                                   <div class="col-sm-6">
@@ -106,13 +106,13 @@
 
                                   <div class="col-sm-6">
                                     <label for="kubikaza" class="form-label">Radna zapremina motora u ccm</label>
-                                    <input type="number" class="form-control" id="kubikaza" name="kubikaza" value="" required maxlength="4">
+                                    <input type="text" class="form-control" id="kubikaza" name="kubikaza" value="" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                   </div>
 
 
                                   <div class="col-sm-6">
                                     <label for="snagaMotora" class="form-label">Snaga motora u kW</label>
-                                    <input type="number" class="form-control" id="snagaMotora"  name="snagaMotora" value="" required="" maxlength="4">
+                                    <input type="text" class="form-control" id="snagaMotora"  name="snagaMotora" value="" required="" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                   </div>
                                                       
                                   <div class="col-md-6">
@@ -128,12 +128,12 @@
 
                                   <div class="col-sm-6">
                                     <label for="godinaProizvodnje" class="form-label">Godina proizvodnje</label>
-                                    <input type="number" class="form-control" id="godinaProizvodnje" name="godinaProizvodnje" value="" required="" maxlength="4">
+                                    <input type="text" class="form-control" id="godinaProizvodnje" name="godinaProizvodnje" value="" required="" maxlength="4" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                   </div>
 
                                   <div class="col-sm-6">
                                     <label for="boja" class="form-label">Boja</label>
-                                    <input type="text" class="form-control" id="boja" name="boja"  value="" required="">
+                                    <input type="text" class="form-control" id="boja" name="boja"  value="" required="" maxlength="30">
                                   </div>
 
                                 <hr class="mt-4">
@@ -141,29 +141,29 @@
                                 <h4 class="mb-3 fw-normal">Podaci o vlasniku</h4>
                                 <div class="col-sm-6">
                                     <label for="ime" class="form-label">Ime</label>
-                                    <input type="text" class="form-control" id="ime" name="ime"  value="" required="">
+                                    <input type="text" class="form-control" id="ime" name="ime"  value="" required="" maxlength="20">
                                   </div>
                       
                                   <div class="col-sm-6">
                                     <label for="prezime" class="form-label">Prezime</label>
-                                    <input type="text" class="form-control" id="prezime" name="prezime"  value="" required="">
+                                    <input type="text" class="form-control" id="prezime" name="prezime"  value="" required="" maxlength="30">
                                   </div>
                                   
                                   <div class="col-12">
                                     <label for="jmbg" class="form-label">Jedinstveni matični broj građanina (JMBG)</label>
                                     <div class="input-group has-validation">
-                                      <input type="number" class="form-control" id="jmbg" name="jmbg" required="" maxlength="13">
+                                      <input type="text" class="form-control" id="jmbg" name="jmbg" required="" maxlength="13" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                     </div>
                                   </div>
                                   
                                   <div class="col-sm-6">
                                     <label for="adresa" class="form-label">Adresa</label>
-                                    <input type="text" class="form-control" id="adresa" name="adresa"  value="" required="">
+                                    <input type="text" class="form-control" id="adresa" name="adresa"  value="" required="" maxlength="100">
                                   </div>
                       
                                   <div class="col-sm-6">
                                     <label for="grad" class="form-label">Grad</label>
-                                    <input type="text" class="form-control" id="grad" name="grad" value="" required="">
+                                    <input type="text" class="form-control" id="grad" name="grad" value="" required="" maxlength="30">
                                   </div>
                                   
                                   <div class="col-md-6">
@@ -185,7 +185,7 @@
 
                                   <div class="col-sm-6">
                                     <label for="telefon" class="form-label">Telefon</label>
-                                    <input type="number" class="form-control" id="telefon" name="telefon" value="" required="" pattern="[0-9]+">
+                                    <input type="text" class="form-control" id="telefon" name="telefon" value="" required="" maxlength="30" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
                                   </div>
                                   
                                     <center>

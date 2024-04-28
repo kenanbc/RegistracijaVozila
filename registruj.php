@@ -40,11 +40,15 @@ $telefon = $_SESSION['telefon'];
 
 
 $tablica = $_POST["tablica"];
+$_SESSION['tablica'] = $tablica;
 $datumRegistracije = $_POST["datumRegistracije"];
 $istekRegistracije = $_POST["istekRegistracije"];
 $statusRegistracije = "Aktivna";
 $uredID = $_COOKIE["user"];
 
+$provjeraVozila = "SELECT voziloID FROM vozilo WHERE brojSasije = '$brojSasije'";
+$result = $conn->query($provjeraVozila);
+if ($result->num_rows <= 0){
 
 $vozilo = $conn->prepare("INSERT INTO vozilo (brojSasije, marka, model, karoserija, vrsta, boja, godinaProizvodnje, tipMotora, snagaMotora, kubikaza, brojMotora) 
                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -62,9 +66,12 @@ if ($voziloID) {
     if ($result->num_rows > 0){
         $row = $result->fetch_assoc();
         $vlasnikID = $row['VlasnikID'];
-        
+
+        $strDatumRegistracije = strtotime($datumRegistracije);
+        $strDatumIstekaRegistracije = strtotime($istekRegistracije);
+
         $registarskaOznaka = $conn->prepare("INSERT INTO registracija (registracijskaOznaka, voziloID, vlasnikID, datumRegistracije, datumistekaRegistracije, statusRegistracije, uredID) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $registarskaOznaka->bind_param("siisssi", $tablica, $voziloID, $vlasnikID, $datumRegistracije, $istekRegistracije, $statusRegistracije, $uredID);
+        $registarskaOznaka->bind_param("siisssi", $tablica, $voziloID, $vlasnikID, $strDatumRegistracije, $strDatumIstekaRegistracije, $statusRegistracije, $uredID);
 
             if ($registarskaOznaka->execute()) {
                 $_SESSION['voziloID'] = $voziloID;
@@ -111,7 +118,11 @@ if ($voziloID) {
 }
 
     $conn->close();
-
+}
+else {
+    $conn->close();
+    header("Location: greska.php");
+}
 if (isset($greska)) {
     header("Location: greska.php");
     exit();

@@ -18,7 +18,7 @@ $uredID = $_COOKIE["user"];
 
 session_start();
 
-$_SESSION['brojRegistracije'] = $brojRegistracije;
+$_SESSION['tablica'] = $brojRegistracije;
 
 
 $registracija = $conn->prepare("UPDATE registracija

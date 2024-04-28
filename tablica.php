@@ -1,62 +1,65 @@
 <?php
     if(isset($_COOKIE["user"])){
-    if(!isset($_POST["tipMotora"])) {
-        $brojMotora = null;
-        $snaga = null;
-        $kubikaza = null;
-        $tipMotora = null;
-    }else{
-        $brojMotora = $_POST["brojMotora"];
-        $tipMotora = $_POST["tipMotora"];
-        $kubikaza = $_POST["kubikaza"];
-        $snaga = $_POST["snagaMotora"];
-    }
-    $marka = $_POST["marka"]; 
-    $model = $_POST["model"]; 
-    $godinaProizvodnje = $_POST["godinaProizvodnje"];
-    $boja = $_POST["boja"];
-    $brojSasije = $_POST["brojSasije"];
-    $karoserija = $_POST["karoserija"];
-    $vrsta = $_POST["vrsta"];
+        if(isset($_POST["marka"])){
+            if(!isset($_POST["tipMotora"])) {
+                $brojMotora = null;
+                $snaga = null;
+                $kubikaza = null;
+                $tipMotora = null;
+            }else{
+                $brojMotora = $_POST["brojMotora"];
+                $tipMotora = $_POST["tipMotora"];
+                $kubikaza = $_POST["kubikaza"];
+                $snaga = $_POST["snagaMotora"];
+            }
+
+            $marka = $_POST["marka"];
+            $model = $_POST["model"]; 
+            $godinaProizvodnje = $_POST["godinaProizvodnje"];
+            $boja = $_POST["boja"];
+            $brojSasije = $_POST["brojSasije"];
+            $karoserija = $_POST["karoserija"];
+            $vrsta = $_POST["vrsta"];
 
 
-    if(!isset($_POST["tipMotora"])) {
-        $brojMotora = null;
-        $snaga = null;
-        $kubikaza = null;
-        $tipMotora = null;
-      }
+            if(!isset($_POST["tipMotora"])) {
+                $brojMotora = null;
+                $snaga = null;
+                $kubikaza = null;
+                $tipMotora = null;
+            }
 
-    $ime = $_POST["ime"];
-    $prezime = $_POST["prezime"];
-    $jmbg = $_POST["jmbg"];
-    $adresa = $_POST["adresa"];
-    $grad = $_POST["grad"];
-    $kanton = $_POST["kanton"];
-    $telefon = $_POST["telefon"];
+            $ime = $_POST["ime"];
+            $prezime = $_POST["prezime"];
+            $jmbg = $_POST["jmbg"];
+            $adresa = $_POST["adresa"];
+            $grad = $_POST["grad"];
+            $kanton = $_POST["kanton"];
+            $telefon = $_POST["telefon"];
 
-    session_start();
+            session_start();
 
-    $_SESSION['marka'] = $marka;
-    $_SESSION['model'] = $model;
-    $_SESSION['godinaProizvodnje'] = $godinaProizvodnje;
-    $_SESSION['brojMotora'] = $brojMotora;
-    $_SESSION['boja'] = $boja;
-    $_SESSION['snaga'] = $snaga;
-    $_SESSION['brojSasije'] = $brojSasije;
-    $_SESSION['kubikaza'] = $kubikaza;
-    $_SESSION['tipMotora'] = $tipMotora;
-    $_SESSION['karoserija'] = $karoserija;
-    $_SESSION['vrsta'] = $vrsta;
+            $_SESSION['marka'] = $marka;
+            $_SESSION['model'] = $model;
+            $_SESSION['godinaProizvodnje'] = $godinaProizvodnje;
+            $_SESSION['brojMotora'] = $brojMotora;
+            $_SESSION['boja'] = $boja;
+            $_SESSION['snaga'] = $snaga;
+            $_SESSION['brojSasije'] = $brojSasije;
+            $_SESSION['kubikaza'] = $kubikaza;
+            $_SESSION['tipMotora'] = $tipMotora;
+            $_SESSION['karoserija'] = $karoserija;
+            $_SESSION['vrsta'] = $vrsta;
 
-    $_SESSION['ime'] = $ime;
-    $_SESSION['prezime'] = $prezime;
-    $_SESSION['jmbg'] = $jmbg;
-    $_SESSION['adresa'] = $adresa;
-    $_SESSION['grad'] = $grad;
-    $_SESSION['kanton'] = $kanton;
-    $_SESSION['telefon'] = $telefon;
-
+            $_SESSION['ime'] = $ime;
+            $_SESSION['prezime'] = $prezime;
+            $_SESSION['jmbg'] = $jmbg;
+            $_SESSION['adresa'] = $adresa;
+            $_SESSION['grad'] = $grad;
+            $_SESSION['kanton'] = $kanton;
+            $_SESSION['telefon'] = $telefon;
+        }
+        else header("Location: ./registracija.php");
     }
 ?>
 
@@ -77,7 +80,7 @@
             <div class="col">
                 <div class="card my-4 rounded-3 shadow-sm">
                   <div class="card-header py-3 text-center d-flex justify-content-between align-items-center">
-                      <button class="btn" onclick="location.href='registracija.html'">
+                      <button class="btn" onclick="location.href='registracija.php'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
                               <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
                           </svg>
@@ -92,11 +95,12 @@
                               <div class="row g-3">
                                     <div class="col-sm-6">
                                         <label for="datumRegistracije" class="form-label">Datum registracije</label>
-                                        <input type="text" class="form-control" id="datumRegistracije" name="datumRegistracije" placeholder="" value="<?php echo date('d.m.Y'); ?>">
+                                        <input type="date" class="form-control" id="datumRegistracije" name="datumRegistracije" placeholder="" value="<?php echo date('Y-m-d'); ?>">
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="istekRegistracije" class="form-label">Datum isteka registracije</label>
-                                        <input type="text" class="form-control" id="istekRegistracije" name="istekRegistracije" placeholder="" value="<?php echo date('d.m.Y', strtotime('+1 year')); ?>" required>
+                                        <input type="date" class="form-control" id="istekRegistracije" name="istekRegistracije" placeholder="" value="<?php echo date('Y-m-d', strtotime('+1 year')); ?>" required>
+                                        <!-- <input type="date" class="form-control" id="istekRegistracije" name="istekRegistracije" placeholder="" value="<?php ; ?>" required onkeypress="return (event.charCode != 8 && event.charCode == 0 || event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57))"> -->
                                     </div>
                                 </div>
 

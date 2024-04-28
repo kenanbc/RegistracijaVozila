@@ -23,11 +23,11 @@
                         </div>
                             <hr class="my-4">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="username" required maxlength="50">
                                 <label for="floatingInput">Korisničko ime</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password" required maxlength="50">
                                 <label for="floatingPassword">Lozinka</label>
                             </div>
                             <button class="w-100 btn btn-lg btn-primary" type="submit">Prijava</button>

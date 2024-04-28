@@ -147,6 +147,7 @@ if(isset($_COOKIE["user"])){
 
                                       if(isset($_SESSION['voziloID'])) {
                                         $modalniID = $_SESSION['voziloID'];
+                                        unset($_SESSION['voziloID']);
                                       }
 
                                     $sql = "SELECT v.VlasnikID, v.ime, v.prezime, v.jmbg, v.adresa, v.grad, v.kanton, v.telefon
@@ -301,8 +302,8 @@ if(isset($_COOKIE["user"])){
                                           echo '
                                                 <tr>
                                                 <th scope="row">'.$row["statusRegistracije"].'</th>
-                                                <td>'.$row["datumRegistracije"].'</td>
-                                                <td>'.$row["datumIstekaRegistracije"].'</td>
+                                                <td>'.date("d.m.Y", strtotime($row["datumRegistracije"])).'</td>
+                                                <td>'.date("d.m.Y", strtotime($row["datumIstekaRegistracije"])).'</td>
                                                 </tr>';
                                         }
                                       } else {
@@ -317,6 +318,11 @@ if(isset($_COOKIE["user"])){
                                  
                                 </div>
                                 <div class="modal-footer">
+                                <form action="odjavaVozila.php" method="post">
+                                    <input type="hidden" name="voziloID" value="<?php echo $modalniID ?>">
+                                    <button name="odjava" type="submit" class="btn btn-danger">Odjavi vozilo</button>
+                                </form>
+                                  
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="deleteSession()">Zatvori</button>
                                 </div>
                               </div>
@@ -411,9 +417,9 @@ if(isset($_COOKIE["user"])){
             session_unset();
             ?>
         }
-
+        
         function goBack(){
-          window.location.href = './index.html';
+          window.location.href = './index.php';
         }
 
         window.onbeforeunload.goBack();
