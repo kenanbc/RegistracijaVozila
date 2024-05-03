@@ -17,7 +17,7 @@
 	Lozinka
 
 4.Vlasnik vozila:
-	ID_vlasnika (Primarni ključ)
+	VlasnikID (Primarni ključ)
 	Ime
 	Prezime
 	JMBG
@@ -27,7 +27,7 @@
 	Telefon
 
 5.Vozilo:
-	Registracijska oznaka(tablica) (Primarni ključ)
+	VoziloID (Primarni ključ)
 	Marka
 	Model
 	Godina proizvodnje
@@ -41,8 +41,10 @@
 
 
 6.Registracija:
-	ID_registracije (Primarni ključ)
+	RegistracijskaOznaka (Primarni ključ)
+	VoziloID(Strani ključ koji povezuje sa entitetom "Vozilo")
+	VlasnikID(Strani ključ koji povezuje sa entitetom "Vlasnik")	
 	Datum_registracije
 	Datum_isteka_registracije
-	Vozilo_Registracijska_oznaka (Strani ključ koji povezuje sa entitetom "Vozilo")
+	StatusRegistracije
 	Ured_ID (Strani ključ koji povezuje sa entitetom "Ured")
