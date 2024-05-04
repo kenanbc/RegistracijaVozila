@@ -4,19 +4,20 @@
 	Adresa
 
 2.Uposlenik:
-	ID_uposlenika (Primarni ključ)
+	uposlenikID (Primarni ključ)
 	Ime
 	Prezime
 	Adresa
 	Telefon
 	Email
 	Korisničko_ime (Strani ključ koji se povezuje sa entitetom 'Podaci za prijavu')
+	uredID (Strani ključ koji se povezuje sa entitetom 'ured')
 
 3.Podaci za prijavu:
 	Korisničko_ime (Primarni ključ)
 	Lozinka
 
-4.Vlasnik vozila:
+4.Vlasnik:
 	VlasnikID (Primarni ključ)
 	Ime
 	Prezime
@@ -28,23 +29,24 @@
 
 5.Vozilo:
 	VoziloID (Primarni ključ)
+	BrojSasije
 	Marka
 	Model
-	Godina proizvodnje
-	Tip
+	Karoserija
+	Vrsta
 	Boja
+	Godina proizvodnje
 	Snaga motora
 	Tip motora
 	Kubikaza
-	Broj_sasije
-	Vlasnik_ID (Strani ključ koji povezuje s entitetom "Vlasnik vozila")
+	BrojMotora
 
 
 6.Registracija:
 	RegistracijskaOznaka (Primarni ključ)
-	VoziloID(Strani ključ koji povezuje sa entitetom "Vozilo")
-	VlasnikID(Strani ključ koji povezuje sa entitetom "Vlasnik")	
-	Datum_registracije
-	Datum_isteka_registracije
+	VoziloID (Strani ključ koji povezuje sa entitetom "Vozilo")
+	VlasnikID (Strani ključ koji povezuje sa entitetom "Vlasnik")	
+	DatumRegistracije
+	DatumIstekaRegistracije
 	StatusRegistracije
-	Ured_ID (Strani ključ koji povezuje sa entitetom "Ured")
+	UredID (Strani ključ koji povezuje sa entitetom "Ured")
